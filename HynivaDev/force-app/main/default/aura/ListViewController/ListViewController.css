@@ -1,0 +1,28 @@
+.THIS .slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.THIS .slds-page-header__title {
+    font-size: var(--lwc-pageHeaderTitleFontSize,1.125rem);
+    font-weight: var(--lwc-pageHeaderTitleFontWeight,700);
+    line-height: var(--lwc-lineHeightHeading,1.25);
+    display: block;
+}
+                
+.THIS .slds-p-right_xx-small, .THIS .slds-p-right--xx-small {
+    padding-right: var(--lwc-spacingXxSmall,0.25rem);
+}
+                        
+.THIS .buttoncss {
+	margin-left: -1.5rem;
+	color: #000;                          
+}
+                        
+.THIS .filtercss {
+	float: right;
+	margin-left: 4rem;
+	color: #000;                          
+}

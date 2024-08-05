@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ 
+    <aura:attribute name="endTime" type="String"/>
+ 
+    <aura:attribute name="timeLeft" type="String"/>
+    <aura:attribute name="ltngIsDisplayed" type="boolean" default="false"/> 
+ 
+    <lightning:tile label="Time Left" class="slds-page-header">
+        {!v.timeLeft}
+    </lightning:tile>
+ 
+    <lightning:button variant="brand" label="Start Timer" title="Start Timer" onclick="{!c.startTimer}" />
+    <lightning:button variant="brand" label="Stop" onclick="{! c.handleStopClick }" value="{!v.ltngIsDisplayed}"/>
+    <lightning:button aura:id="check" variant="brand" label="Reset" onclick="{! c.handleResetClick }" />
+
+</aura:component>

@@ -1,0 +1,13 @@
+<aura:component >
+	 <aura:attribute name="partnerdata" type="Object" access="private" />
+    <aura:attribute name="partnercolumns" type="List" access="private" />
+    <aura:attribute name="partnerSelectedRows" type="List" access="private" default="" />
+
+    <!--
+    <lightning:datatable aura:id="partnerTable" data="{!v.partnerdata}" 
+    columns="{!v.partnercolumns}" keyField="Id" selectedRows="{!v.partnerSelectedRows}"/>
+    -->
+
+    <lightning:datatable aura:id="partnerTable" data="{!v.partnerdata}" 
+    columns="{!v.partnercolumns}" keyField="Id" /> 
+</aura:component>

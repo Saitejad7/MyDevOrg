@@ -1,0 +1,15 @@
+<aura:component controller="VMFundingOptions" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens"  access="global" >
+	<aura:handler name="init" value="{! this }" action="{! c.loadOptions }"/>
+    <aura:attribute name="invests" type="List" default="[]"/>
+    <aura:attribute name="selectedValue" type="String" access="PRIVATE"/>
+    
+	<aura:if isTrue="{!not(empty(v.invests))}">
+        <aura:iteration items="{!v.invests}" var="option">
+            <lightning:select name="selectItem" label="Select an item" onchange="{!c.doSomething}">
+                <option value="{!option.datavalue.value[1].key}">{!option.datavalue.value[1].value}</option>
+                <option value="{!option.datavalue.value[0].key}">{!option.datavalue.value[0].value}</option>
+            </lightning:select>
+			{!option.datavalue.value[0].value}
+        </aura:iteration>
+    </aura:if>
+</aura:component>
