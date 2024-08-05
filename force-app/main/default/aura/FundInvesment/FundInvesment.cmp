@@ -1,0 +1,17 @@
+<aura:component controller="CustomListView">
+
+    <aura:attribute type="Fund_Account__c[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAcc}"/>
+
+    <br/>
+
+    <lightning:datatable data="{! v.acctList }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+
+
+
+</aura:component>

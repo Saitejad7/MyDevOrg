@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+	<aura:attribute name="colors" type="String[]" default="Phone,Web,Branch"/>
+    <lightning:select name="select" label="channel" required="true">
+        <aura:iteration items="{!v.colors}" var="color">
+                <option text="{!color}"></option>
+            </aura:iteration>
+    </lightning:select>
+     <lightning:select name="select1" label="How many tickets?" required="true">
+        <option value="">choose one...</option>
+        <option value="1">Bank Account</option>
+        <option value="2">Personal Check</option>
+        <option value="3">Wire Transfer</option>
+    </lightning:select>
+</aura:component>

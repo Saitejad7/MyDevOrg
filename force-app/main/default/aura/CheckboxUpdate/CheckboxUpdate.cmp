@@ -1,0 +1,15 @@
+<aura:component controller="CheckboxUpdateController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="data" type="Object[]"/>
+    <aura:attribute name="columns" type="Object[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:datatable
+        data="{!v.data}"
+        columns="{!v.columns}"
+        keyField="{!v.keyField}"
+        onrowselection="{!c.handleCheckboxChange}"
+        >
+        
+    </lightning:datatable>
+</aura:component>

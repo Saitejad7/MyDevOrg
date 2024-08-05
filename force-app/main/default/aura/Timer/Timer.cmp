@@ -1,0 +1,59 @@
+<!--<aura:component >
+    
+    <aura:handler name="init" value="{! this }" action="{!c.doInit}"/>
+    <aura:attribute name="ltngHour" type="Integer" default="00" />
+    <aura:attribute name="ltngMinute" type="Integer" default="00"/>
+    <aura:attribute name="ltngSecond" type="Integer" default="00"/>
+    <aura:attribute name="ltngTimmer" type="Integer" default="00:00:00" />
+    <aura:attribute name="ltngIsDisplayed" type="boolean" default="false"/> 
+    
+    <div class="slds-card slds-align_absolute-center" style="width:250px;padding:8px;" >
+        <div class="slds-grid slds-wrap" >
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center" >
+                <b>Timmer</b>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <p style="text-align: center;">hh</p>
+                <lightning:input value="{!v.ltngHour}" label="" name="hh" placeholder="hh" type="number" maxlength="2" min="0" max="60" />
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <p style="text-align: center;">mm</p>
+                <lightning:input value="{!v.ltngMinute}" label="" name="mm" placeholder="mm" type="number" maxlength="2" min="0" max="60" />
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <p style="text-align: center;">ss</p>
+                <lightning:input value="{!v.ltngSecond}" label="" name="ss" placeholder="ss" type="number" maxlength="2" min="0" max="60" />
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center" >
+                {!v.ltngTimmer}
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                <lightning:button variant="brand" label="Start" onclick="{! c.handleStartClick }" disabled="{!v.ltngIsDisplayed}"/>
+                <lightning:button variant="brand" label="Stop" onclick="{! c.handleStopClick }" disabled="{! !v.ltngIsDisplayed}"/>
+                <lightning:button variant="brand" label="Reset" onclick="{! c.handleResetClick }" />
+            </div>
+        </div>
+    </div>    
+</aura:component> -->
+
+<aura:component >
+    <aura:handler name="init" value="{! this }" action="{!c.doInit}"/>
+    <aura:attribute name="ltngCurrTime" type="String" default="00:00:00"/>
+    <aura:attribute name="ltngIsDisplayed" type="boolean" default="false"/> 
+    
+    <div class="slds-card slds-align_absolute-center" style="width:250px;padding:8px;" >
+        <div class="slds-grid slds-wrap" >
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center" >
+                <b>Stopwatch</b>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center" >
+                {!v.ltngCurrTime}
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                <lightning:button variant="brand" label="Start" onclick="{! c.handleStartClick }" disabled="{!v.ltngIsDisplayed}"/>
+                <lightning:button variant="brand" label="Stop" onclick="{! c.handleStopClick }" disabled="{! !v.ltngIsDisplayed}"/>
+                <lightning:button variant="brand" label="Reset" onclick="{! c.handleResetClick }" />
+            </div>
+        </div>
+    </div>    
+</aura:component>
